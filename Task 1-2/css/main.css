@@ -1,0 +1,216 @@
+.wrapper{
+    padding: 100px 0;
+}
+.task{
+    margin-bottom: 50px;
+}
+.task__tittle{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+/*Task one*/
+
+
+.flags-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flag{
+    display: flex;
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+}
+.flags-list__item:not(:last-child){
+    margin-bottom: 20px;
+}
+.flag__tittle{
+    margin-bottom: 20px;
+}
+
+/*Ukraine*/
+
+.ukraine .flag{
+    flex-direction: column;
+}
+.ukraine .flag span{
+    height: 50%;
+}
+.ukraine .flag span.yellow{
+    background-color: yellow;
+}
+.ukraine .flag span.blue{
+    background-color: blue;
+}
+
+/*Japan*/
+
+.japan .flag{
+    justify-content: center;
+    align-items: center;
+}
+.japan .flag span{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+/*Island*/
+
+.island .flag{
+    align-items: center;
+    background-color: blue;
+    position: relative;
+}
+.island .flag .stripe{
+    display: flex;
+    position: absolute;
+    background-color: white;
+}
+.island .flag .stripe.horizontal{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    align-items: center;
+}
+.island .flag .stripe .stripe__main{
+    position: relative;
+    z-index: 1;
+    display: block;
+    background-color: red;
+}
+.island .flag .stripe.horizontal .stripe__main{
+    width: 100%;
+    height: 50%;
+}
+.island .flag .stripe.vertical{
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    left: 30%;
+    align-items: center;
+}
+.island .flag .stripe.vertical .stripe__main{
+    height: 100%;
+    width: 50%;
+}
+
+/*Czech*/
+
+.сzech .flag{
+    flex-direction: column;
+    position: relative;
+}
+.сzech .flag .white,
+.сzech .flag .red{
+    display: block;
+    height: 50%;
+    width: 100%;
+}
+.сzech .flag .white{
+    background-color: white;
+}
+.сzech .flag .red{
+    background-color: red;
+}
+.сzech .flag .triangle{
+    position: absolute;
+    width: 50%;
+    border: 100px solid transparent; border-left: 150px solid blue;
+}
+
+/*Task two*/
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.image-list{
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50px;
+
+}
+.image-list__item{
+    position: relative;
+
+}
+.image-list__item .img-holder{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #4d4d4d;
+    border-radius: 50%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.image-list__item .img-holder:hover{
+    border: 5px solid yellow;
+    transform: rotate(45deg);
+}
+.image-list img{
+    width: 100%;
+    height: 100%;
+}
+.image-list__item .delete{
+    font-family: sans-serif;
+    cursor: pointer;
+}
+@media screen and (min-width: 900px){
+    .image-list__item:nth-child(4n-3) .img-holder{
+        border: 5px solid red;
+    }
+}
+@media screen and (max-width: 900px){
+    .image-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .image-list__item:nth-child(2n-1) .img-holder{
+        border: 5px solid red;
+    }
+}
+@media screen and (max-width: 500px){
+    .image-list{
+        grid-template-columns: 1fr;
+    }
+    .image-list__item:nth-child(2n-1){
+        border: 5px solid #4d4d4d;
+    }
+}
+
+
+
+
+
+.info{
+    padding: 50px;
+}
+.popup{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(77, 77, 77, 0.29);
+    opacity: 0;
+}
+.popup .img-holder{
+    position: relative;
+    width: 60%;
+}
+.popup .close{
+    position: absolute;
+    right: -100px;
+}
